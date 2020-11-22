@@ -12,6 +12,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/new'
 
-    assert_select "div"、"Name can't be blank"
+    assert_select 'div#error_explanation'
+    assert_select 'div.field_with_errors'
+
+    assert_not flash[:success] != nil
   end
 end
