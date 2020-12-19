@@ -5,6 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
     @other_user = users(:archer)
+    @noact = users(:noact)
   end
 
   test "should get signup" do
@@ -58,5 +59,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       delete user_path(@user)
     end
     assert_redirected_to root_url
+  end
+
+  test "non activate user is no display" do
+    log_in_as(@noact)
+    get edit_user_path(@noact)
+    assert_not flash.empty?
   end
 end
