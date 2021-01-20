@@ -5,6 +5,7 @@ ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
+gem 'active_storage_validations', '0.8.2'
 gem 'bcrypt',         '3.1.13'
 # Use sqlite3 as the database for Active Record
 gem 'puma', '~> 4.1'
